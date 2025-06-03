@@ -18,13 +18,14 @@
     <section class="ul-blogs-2 ul-section-spacing">
         <div class="ul-container wow animate__fadeInUp">
             <div class="row row-cols-md-3 row-cols-2 row-cols-xxs-1 ul-bs-row justify-content-center">
+                
                 <!-- single blog -->
-                <div class="col">
+                <div class="col" *ngFor="let blog of blogList">
                     <div class="ul-blog ul-blog-2">
-                        <div class="ul-blog-img"><img src="assets/img/blog-1.jpg" alt="Blog Image">
+                        <div class="ul-blog-img"><img [src]="blog.imgPath" alt="Blog Image">
                             <div class="date">
-                                <span class="number">15</span>
-                                <span class="txt">Dec</span>
+                                <span class="number">{{blog.date | date:'dd'}}</span>
+                                <span class="txt">{{blog.date | date:'MMM'}}</span>
                             </div>
                         </div>
                         <div class="ul-blog-txt">
@@ -32,159 +33,20 @@
                                 <!-- single info -->
                                 <div class="ul-blog-info">
                                     <span class="icon"><i class="flaticon-account"></i></span>
-                                    <span class="text font-normal text-[14px] text-etGray">By Admin</span>
+                                    <span class="text font-normal text-[14px] text-etGray">{{blog.rights}}</span>
                                 </div>
                                 <!-- single info -->
                                 <div class="ul-blog-info">
                                     <span class="icon"><i class="flaticon-price-tag"></i></span>
-                                    <span class="text font-normal text-[14px] text-etGray">Donation</span>
+                                    <span class="text font-normal text-[14px] text-etGray">{{blog.type}}</span>
                                 </div>
                             </div>
-                            <a href="blog-details.html" class="ul-blog-title">Give Education, It’s The Best Gift Ever.</a>
-                            <a href="blog-details.html" class="ul-blog-btn">Read More <span class="icon"><i class="flaticon-next"></i></span></a>
+                            <a [routerLink]="[blog.link, blog.id]" class="ul-blog-title">{{blog.linkText1}}</a>
+                            <a [routerLink]="[blog.link, blog.id]" class="ul-blog-btn">{{blog.linkText2}}<span class="icon"><i class="flaticon-next"></i></span></a>
                         </div>
                     </div>
                 </div>
 
-                <!-- single blog -->
-                <div class="col">
-                    <div class="ul-blog ul-blog-2">
-                        <div class="ul-blog-img"><img src="assets/img/blog-2.jpg" alt="Blog Image">
-                            <div class="date">
-                                <span class="number">15</span>
-                                <span class="txt">Dec</span>
-                            </div>
-                        </div>
-                        <div class="ul-blog-txt">
-                            <div class="ul-blog-infos">
-                                <!-- single info -->
-                                <div class="ul-blog-info">
-                                    <span class="icon"><i class="flaticon-account"></i></span>
-                                    <span class="text font-normal text-[14px] text-etGray">By Admin</span>
-                                </div>
-                                <!-- single info -->
-                                <div class="ul-blog-info">
-                                    <span class="icon"><i class="flaticon-price-tag"></i></span>
-                                    <span class="text font-normal text-[14px] text-etGray">Donation</span>
-                                </div>
-                            </div>
-                            <a href="blog-details.html" class="ul-blog-title">Don’t treat oceans as universal garbage cans</a>
-                            <a href="blog-details.html" class="ul-blog-btn">Read More <span class="icon"><i class="flaticon-next"></i></span></a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- single blog -->
-                <div class="col">
-                    <div class="ul-blog ul-blog-2">
-                        <div class="ul-blog-img"><img src="assets/img/blog-3.jpg" alt="Blog Image">
-                            <div class="date">
-                                <span class="number">15</span>
-                                <span class="txt">Dec</span>
-                            </div>
-                        </div>
-                        <div class="ul-blog-txt">
-                            <div class="ul-blog-infos">
-                                <!-- single info -->
-                                <div class="ul-blog-info">
-                                    <span class="icon"><i class="flaticon-account"></i></span>
-                                    <span class="text font-normal text-[14px] text-etGray">By Admin</span>
-                                </div>
-                                <!-- single info -->
-                                <div class="ul-blog-info">
-                                    <span class="icon"><i class="flaticon-price-tag"></i></span>
-                                    <span class="text font-normal text-[14px] text-etGray">Donation</span>
-                                </div>
-                            </div>
-                            <a href="blog-details.html" class="ul-blog-title">The sun and the sand makes beaches beautiful</a>
-                            <a href="blog-details.html" class="ul-blog-btn">Read More <span class="icon"><i class="flaticon-next"></i></span></a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- single blog -->
-                <div class="col">
-                    <div class="ul-blog ul-blog-2">
-                        <div class="ul-blog-img"><img src="assets/img/blog-1.jpg" alt="Blog Image">
-                            <div class="date">
-                                <span class="number">15</span>
-                                <span class="txt">Dec</span>
-                            </div>
-                        </div>
-                        <div class="ul-blog-txt">
-                            <div class="ul-blog-infos">
-                                <!-- single info -->
-                                <div class="ul-blog-info">
-                                    <span class="icon"><i class="flaticon-account"></i></span>
-                                    <span class="text font-normal text-[14px] text-etGray">By Admin</span>
-                                </div>
-                                <!-- single info -->
-                                <div class="ul-blog-info">
-                                    <span class="icon"><i class="flaticon-price-tag"></i></span>
-                                    <span class="text font-normal text-[14px] text-etGray">Donation</span>
-                                </div>
-                            </div>
-                            <a href="blog-details.html" class="ul-blog-title">Give Education, It’s The Best Gift Ever.</a>
-                            <a href="blog-details.html" class="ul-blog-btn">Read More <span class="icon"><i class="flaticon-next"></i></span></a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- single blog -->
-                <div class="col">
-                    <div class="ul-blog ul-blog-2">
-                        <div class="ul-blog-img"><img src="assets/img/blog-2.jpg" alt="Blog Image">
-                            <div class="date">
-                                <span class="number">15</span>
-                                <span class="txt">Dec</span>
-                            </div>
-                        </div>
-                        <div class="ul-blog-txt">
-                            <div class="ul-blog-infos">
-                                <!-- single info -->
-                                <div class="ul-blog-info">
-                                    <span class="icon"><i class="flaticon-account"></i></span>
-                                    <span class="text font-normal text-[14px] text-etGray">By Admin</span>
-                                </div>
-                                <!-- single info -->
-                                <div class="ul-blog-info">
-                                    <span class="icon"><i class="flaticon-price-tag"></i></span>
-                                    <span class="text font-normal text-[14px] text-etGray">Donation</span>
-                                </div>
-                            </div>
-                            <a href="blog-details.html" class="ul-blog-title">Don’t treat oceans as universal garbage cans</a>
-                            <a href="blog-details.html" class="ul-blog-btn">Read More <span class="icon"><i class="flaticon-next"></i></span></a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- single blog -->
-                <div class="col">
-                    <div class="ul-blog ul-blog-2">
-                        <div class="ul-blog-img"><img src="assets/img/blog-3.jpg" alt="Blog Image">
-                            <div class="date">
-                                <span class="number">15</span>
-                                <span class="txt">Dec</span>
-                            </div>
-                        </div>
-                        <div class="ul-blog-txt">
-                            <div class="ul-blog-infos">
-                                <!-- single info -->
-                                <div class="ul-blog-info">
-                                    <span class="icon"><i class="flaticon-account"></i></span>
-                                    <span class="text font-normal text-[14px] text-etGray">By Admin</span>
-                                </div>
-                                <!-- single info -->
-                                <div class="ul-blog-info">
-                                    <span class="icon"><i class="flaticon-price-tag"></i></span>
-                                    <span class="text font-normal text-[14px] text-etGray">Donation</span>
-                                </div>
-                            </div>
-                            <a href="blog-details.html" class="ul-blog-title">The sun and the sand makes beaches beautiful</a>
-                            <a href="blog-details.html" class="ul-blog-btn">Read More <span class="icon"><i class="flaticon-next"></i></span></a>
-                        </div>
-                    </div>
-                </div>
             </div>
 
             <!-- pagination -->

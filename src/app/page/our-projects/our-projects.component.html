@@ -12,103 +12,29 @@
         </div>
     </section>
     <!-- BREADCRUMBS SECTION END -->
-
-
     <!-- PROJECTS SECTION START -->
     <section class="ul-projects ul-section-spacing">
         <div class="ul-container">
-            <div class="row ul-bs-row justify-content-center">
-                <div class="col-lg-8 col-md-6 col-10 col-xxs-12">
-                    <div class="ul-project ">
-                        <div class="ul-project-img">
-                            <img src="assets/img/project-1.jpg" alt="Project Image">
-                        </div>
-                        <div class="ul-project-txt">
-                            <div>
-                                <h3 class="ul-project-title"><a href="project-details.html">Child trouble & care</a></h3>
-                                <p class="ul-project-descr"> Demostic & Transportation</p>
-                            </div>
-                            <a href="project-details.html" class="ul-project-btn"><i class="flaticon-up-right-arrow"></i></a>
-                        </div>
-                    </div>
-                </div>
+            <div class="row ul-bs-row justify-content-center" >
 
-                <div class="col-lg-4 col-md-6 col-10 col-xxs-12">
+                <div class="col-lg-4 col-md-6 col-10 col-xxs-12" *ngFor="let data of details">
                     <div class="ul-project ul-project--sm">
                         <div class="ul-project-img">
-                            <img src="assets/img/project-2.jpg" alt="Project Image">
+                            <img [src]="data.Imgpath" alt="Project Image">
                         </div>
                         <div class="ul-project-txt">
                             <div>
-                                <h3 class="ul-project-title"><a href="project-details.html">Child trouble & care</a></h3>
-                                <p class="ul-project-descr"> Demostic & Transportation</p>
+                                <h3 class="ul-project-title"><a [routerLink]="[data.Path, data.id]">{{data.head}}</a></h3>
+                                <p class="ul-project-descr"> {{data.pera}}</p>
                             </div>
-                            <a href="project-details.html" class="ul-project-btn"><i class="flaticon-up-right-arrow"></i></a>
+                            <a [routerLink]="[data.Path, data.id]" class="ul-project-btn"><i class="flaticon-up-right-arrow"></i></a>
                         </div>
                     </div>
                 </div>
-
-                <div class="col-lg-4 col-md-6 col-10 col-xxs-12">
-                    <div class="ul-project ul-project--sm">
-                        <div class="ul-project-img">
-                            <img src="assets/img/project-3.jpg" alt="Project Image">
-                        </div>
-                        <div class="ul-project-txt">
-                            <div>
-                                <h3 class="ul-project-title"><a href="project-details.html">Child trouble & care</a></h3>
-                                <p class="ul-project-descr"> Demostic & Transportation</p>
-                            </div>
-                            <a href="project-details.html" class="ul-project-btn"><i class="flaticon-up-right-arrow"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-8 col-md-6 col-10 col-xxs-12">
-                    <div class="ul-project ">
-                        <div class="ul-project-img">
-                            <img src="assets/img/project-4.jpg" alt="Project Image">
-                        </div>
-                        <div class="ul-project-txt">
-                            <div>
-                                <h3 class="ul-project-title"><a href="project-details.html">Child trouble & care</a></h3>
-                                <p class="ul-project-descr"> Demostic & Transportation</p>
-                            </div>
-                            <a href="project-details.html" class="ul-project-btn"><i class="flaticon-up-right-arrow"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-8 col-md-6 col-10 col-xxs-12">
-                    <div class="ul-project ">
-                        <div class="ul-project-img">
-                            <img src="assets/img/project-1.jpg" alt="Project Image">
-                        </div>
-                        <div class="ul-project-txt">
-                            <div>
-                                <h3 class="ul-project-title"><a href="project-details.html">Child trouble & care</a></h3>
-                                <p class="ul-project-descr"> Demostic & Transportation</p>
-                            </div>
-                            <a href="project-details.html" class="ul-project-btn"><i class="flaticon-up-right-arrow"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 col-10 col-xxs-12">
-                    <div class="ul-project ul-project--sm">
-                        <div class="ul-project-img">
-                            <img src="assets/img/project-2.jpg" alt="Project Image">
-                        </div>
-                        <div class="ul-project-txt">
-                            <div>
-                                <h3 class="ul-project-title"><a href="project-details.html">Child trouble & care</a></h3>
-                                <p class="ul-project-descr"> Demostic & Transportation</p>
-                            </div>
-                            <a href="project-details.html" class="ul-project-btn"><i class="flaticon-up-right-arrow"></i></a>
-                        </div>
-                    </div>
-                </div>
+                
             </div>
         </div>
     </section>
     <!-- PROJECTS SECTION END -->
 </main>
+

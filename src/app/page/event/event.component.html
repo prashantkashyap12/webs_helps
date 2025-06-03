@@ -19,78 +19,20 @@
             <!-- events -->
             <div class="ul-events-wrapper">
                 <div class="row ul-bs-row row-cols-lg-2 row-cols-1">
-                    <!-- single event -->
-                    <div class="col wow animate__fadeInUp">
+                    <div class="col wow animate__fadeInUp" *ngFor="let event of events">
                         <div class="ul-event ul-event--inner">
                             <div class="ul-event-img">
-                                <img src="assets/img/event-img.jpg" alt="Event Image">
-                                <span class="date">29 <span>July</span></span>
+                                <img [src]="event.imgPath" alt="Event Image">
+                                <span class="date">{{event.date | date:'dd'}} <span>{{event.date | date:'MMM'}}</span></span>
                             </div>
                             <div class="ul-event-txt">
-                                <h3 class="ul-event-title"><a href="event-details.html">Manager Disapproved of the Most Recent Work.</a></h3>
-                                <p class="ul-event-descr">Dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernaturaut</p>
+                                <h3 class="ul-event-title"><a [routerLink]="[event.link, event.id]">{{event.heading}}</a></h3>
+                                <p class="ul-event-descr">{{event.pera}}</p>
                                 <div class="ul-event-info">
-                                    <span class="ul-event-info-title">Venue</span>
-                                    <p class="ul-event-info-descr">350 5th AveNew York, NY 118 United States</p>
+                                    <span class="ul-event-info-title">{{event.place}}</span>
+                                    <p class="ul-event-info-descr">{{event.address}}</p>
                                 </div>
-                                <a href="event-details.html" class="ul-btn"><i class="flaticon-fast-forward-double-right-arrows-symbol"></i> Event Details</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- single event -->
-                    <div class="col wow animate__fadeInUp">
-                        <div class="ul-event ul-event--inner">
-                            <div class="ul-event-img">
-                                <img src="assets/img/blog-b-1.jpg" alt="Event Image">
-                                <span class="date">29 <span>July</span></span>
-                            </div>
-                            <div class="ul-event-txt">
-                                <h3 class="ul-event-title"><a href="event-details.html">Manager Disapproved of the Most Recent Work.</a></h3>
-                                <p class="ul-event-descr">Dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernaturaut</p>
-                                <div class="ul-event-info">
-                                    <span class="ul-event-info-title">Venue</span>
-                                    <p class="ul-event-info-descr">350 5th AveNew York, NY 118 United States</p>
-                                </div>
-                                <a href="event-details.html" class="ul-btn"><i class="flaticon-fast-forward-double-right-arrows-symbol"></i> Event Details</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- single event -->
-                    <div class="col wow animate__fadeInUp">
-                        <div class="ul-event ul-event--inner">
-                            <div class="ul-event-img">
-                                <img src="assets/img/blog-b-2.jpg" alt="Event Image">
-                                <span class="date">29 <span>July</span></span>
-                            </div>
-                            <div class="ul-event-txt">
-                                <h3 class="ul-event-title"><a href="event-details.html">Manager Disapproved of the Most Recent Work.</a></h3>
-                                <p class="ul-event-descr">Dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernaturaut</p>
-                                <div class="ul-event-info">
-                                    <span class="ul-event-info-title">Venue</span>
-                                    <p class="ul-event-info-descr">350 5th AveNew York, NY 118 United States</p>
-                                </div>
-                                <a href="event-details.html" class="ul-btn"><i class="flaticon-fast-forward-double-right-arrows-symbol"></i> Event Details</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- single event -->
-                    <div class="col wow animate__fadeInUp">
-                        <div class="ul-event ul-event--inner">
-                            <div class="ul-event-img">
-                                <img src="assets/img/blog-3.jpg" alt="Event Image">
-                                <span class="date">29 <span>July</span></span>
-                            </div>
-                            <div class="ul-event-txt">
-                                <h3 class="ul-event-title"><a href="event-details.html">Manager Disapproved of the Most Recent Work.</a></h3>
-                                <p class="ul-event-descr">Dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernaturaut</p>
-                                <div class="ul-event-info">
-                                    <span class="ul-event-info-title">Venue</span>
-                                    <p class="ul-event-info-descr">350 5th AveNew York, NY 118 United States</p>
-                                </div>
-                                <a href="event-details.html" class="ul-btn"><i class="flaticon-fast-forward-double-right-arrows-symbol"></i> Event Details</a>
+                                <a [routerLink]="[event.link, event.id]" class="ul-btn"><i class="flaticon-fast-forward-double-right-arrows-symbol"></i> {{event.linkText}}</a>
                             </div>
                         </div>
                     </div>
