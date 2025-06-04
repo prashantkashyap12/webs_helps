@@ -16,23 +16,23 @@
 
     <div class="ul-container ul-section-spacing">
         <div class="ul-project-details-img-slider swiper">
-            <div class="swiper-wrapper">
+            <div class="swiper-wrapper" *ngFor="let data of projDetails1">
                 <!-- single slide -->
                 <div class="swiper-slide">
                     <div>
-                        <img src="assets/img/project-details-img-1.jpg" alt="Image">
+                        <img [src]="data.img1" alt="Image">
                     </div>
                 </div>
                 <!-- single slide -->
                 <div class="swiper-slide">
                     <div>
-                        <img src="assets/img/project-details-img-1.jpg" alt="Image">
+                        <img [src]="data.img2" alt="Image">
                     </div>
                 </div>
                 <!-- single slide -->
                 <div class="swiper-slide">
                     <div>
-                        <img src="assets/img/project-details-img-1.jpg" alt="Image">
+                        <img [src]="data.img3" alt="Image">
                     </div>
                 </div>
             </div>
@@ -43,18 +43,18 @@
             </div>
         </div>
 
-        <div class="row gx-5 gy-4 flex-column-reverse flex-lg-row">
+        <div class="row gx-5 gy-4 flex-column-reverse flex-lg-row" *ngFor="let data of projDetails2">
             <!-- event details content -->
             <div class="col-md-8">
                 <div class="ul-event-details">
-                    <h2 class="ul-event-details-title">Child trouble & care</h2>
-                    <p class="ul-event-details-descr">Netus lorem rutrum arcu dignissim at sit morbi phasellus nascetur eget potenti vestibulum is cras. Tempor nonummy metus lobortis. Sociis velit etiam, dapibus.Lectus ve pellentesque a cras posuere tempor facilisi habitant lectus rutrum pede quisque hendrerit mauris ad to elementum fringilla facilisi volutpat fusce pharetra.</p>
-                    <p>Netus lorem rutrum arcu dignissim at sit morbi phasellus nascetur eget potenti vestibulum is cras. Tempor nonummy metus lobortis. Sociis velit etiam, dapibus.Lectus ve pellentesque a cras posuere tempor facilisi habitant lectus rutrum pede . Netus lorem rutrum arcu dignissim at sit morbi phasellus nascetur eget potenti vestibulum is cras.</p>
-                    <h3 class="ul-event-details-inner-title">Challenge & Solution </h3>
-                    <p class="ul-event-details-descr">Future, as it seeks to lead the industry in technological innovation and sustainable building practices to deliver long-lasting value for its clients. Netus lorem rutrum arcu dignissim at sit morbi nascetur eget potenti vestibulum is cras. Tempor nonummy metus lobortis. Sociis velit etiam, dapibus.Lepellentesque a cras posuere tempor facilisi habitant lectus rutrum pede .</p>
+                    <h2 class="ul-event-details-title">{{data.head1}}</h2>
+                    <p class="ul-event-details-descr">{{data.pera1}}</p>
+                    <p>{{data.pera11}}</p>
+                    <h3 class="ul-event-details-inner-title">{{data.head2}}</h3>
+                    <p class="ul-event-details-descr">{{data.pera2}}</p>
 
-                    <h3 class="ul-event-inner-title">Final Result</h3>
-                    <p>For almost 50 years Leighton Asia, one of the region’s largest and most respected construc companies, has been progressively building for a better future by leveraging international expertise with local intelligence. In that time Leighton./p>
+                    <h3 class="ul-event-inner-title">{{data.head3}}</h3>
+                    <p>{{data.pera3}}</p>
                 </div>
             </div>
 
@@ -62,12 +62,12 @@
             <div class="col-md-4">
                 <div class="ul-project-details-infos">
                     <h4 class="ul-project-details-infos-title">Project Information</h4>
-                    <ul class="ul-project-details-infos-list">
-                        <li><span class="key">CATEGORY</span>:<span class="value">Business, Marketing</span></li>
-                        <li><span class="key">AUTHOR</span>:<span class="value">Athena Jones</span></li>
-                        <li><span class="key">TAGS</span>:<span class="value">Data Masters</span></li>
-                        <li><span class="key">COST</span>:<span class="value">USD 1,50,499</span></li>
-                        <li><span class="key">DATE</span>:<span class="value">25 February, 2024</span></li>
+                    <ul class="ul-project-details-infos-list" *ngFor="let data of projInfo">
+                        <li><span class="key">CATEGORY</span>:<span class="value">{{data.cat}}</span></li>
+                        <li><span class="key">AUTHOR</span>:<span class="value">{{data.auth}}</span></li>
+                        <li><span class="key">TAGS</span>:<span class="value">{{data.tag}}</span></li>
+                        <li><span class="key">COST</span>:<span class="value">{{data.cost}}</span></li>
+                        <li><span class="key">DATE</span>:<span class="value">{{data.date}}</span></li>
                     </ul>
 
                     <div class="ul-footer-socials ul-project-details-infos-shares">
