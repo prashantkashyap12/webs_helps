@@ -109,15 +109,15 @@
 
             <!-- event details content -->
             <div class="col-lg-8">
-                <div class="ul-event-details ul-donation-details">
+                <div class="ul-event-details ul-donation-details" *ngFor="let event of eventDetails">
                     <div class="ul-event-details-img">
-                        <img src="assets/img/event-details.jpg" alt="Image">
+                        <img [src]="event.img" alt="Image">
                     </div>
                     <div class="ul-event-details-infos">
                         <!-- single info -->
                         <div class="ul-event-details-info">
                             <span class="icon"><i class="flaticon-account"></i></span>
-                            <span class="text">By Admin</span>
+                            <span class="text">By {{event.dadicat}}</span>
                         </div>
                         <!-- single info -->
                         <div class="ul-event-details-info">
@@ -125,17 +125,17 @@
                             <span class="text">Donation</span>
                         </div>
                     </div>
-                    <h2 class="ul-event-details-title">Manager Disapproved of the Most Recent Work.</h2>
-                    <p class="ul-event-details-descr">I must explain to you how all this mistaken idea of pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful.</p>
-                    <p>Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise.</p>
-                    <h3 class="ul-event-details-inner-title">Our Event Mission</h3>
-                    <p class="ul-event-details-descr">Cast obscure badger jeep quail congenialy when changed as cat jeepers affectionate thus facilisi goodness this far like ipsum dolor sit amet, consectetur adipisicing elits eiusmod tempo incididunt et laboret dolore magna aliqua enim ad minim. Eveniet in vulputate esse molestie consequat, illum Eveniet in vulputate esse molestie dolore .</p>
+                    <h2 class="ul-event-details-title">{{event.head1}}</h2>
+                    <p class="ul-event-details-descr">{{event.pera11}}</p>
+                    <p>{{event.pera12}}</p>
+                    <h3 class="ul-event-details-inner-title">{{event.head2}}</h3>
+                    <p class="ul-event-details-descr">{{event.pera22}}</p>
                     <ul class="ul-event-details-list">
-                        <li>Creating and editing content</li>
-                        <li>Workflows, reporting, and content organization</li>
-                        <li>User & role-based administration and security</li>
-                        <li>Flexibility, scalability, and performance and analysis</li>
-                        <li>Multilingual content capabilities</li>
+                        <li>{{event.li1}}</li>
+                        <li>{{event.li2}}</li>
+                        <li>{{event.li3}}</li>
+                        <li>{{event.li4}}</li>
+                        <li>{{event.li5}}</li>
                     </ul>
                     <h3 class="ul-event-inner-title">See Our Locations</h3>
                     <div class="ul-event-details-map">
