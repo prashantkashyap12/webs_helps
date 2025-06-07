@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-event-details',
@@ -8,7 +8,12 @@ import { Component } from '@angular/core';
   templateUrl: './event-details.component.html',
   styleUrl: './event-details.component.css'
 })
-export class EventDetailsComponent {
+export class EventDetailsComponent implements OnInit {
+
+  ngOnInit(): void {
+    
+  }
+
 
   eventDetails:any[] = [
     {img:'assets/img/event-details.jpg', dadicat:'Admin', head1:'Manager Disapproved of the Most Recent Work.', pera11:'I must explain to you how all this mistaken idea of pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful.', pera12:'Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise.',
