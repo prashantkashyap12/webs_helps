@@ -1,15 +1,29 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
+import { RouterLink } from '@angular/router';
+import { ProjectListService } from '../../service/project/project.service';
 
 @Component({
   selector: 'app-our-projects-details',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
+  providers:[ProjectListService],
   templateUrl: './our-projects-details.component.html',
   styleUrl: './our-projects-details.component.css'
 })
-export class OurProjectsDetailsComponent {
+export class OurProjectsDetailsComponent implements OnInit {
 
+  constructor(private _proj:ProjectListService){}  
+  ngOnInit(): void {
+    this.getRes();  
+  }
+
+  getRes(){
+    this._proj.projectDetails().subscribe(res=>{
+      console.log(res);
+    })
+  }
 
   projDetails1:any[] = [
     {img1:'assets/img/project-details-img-1.jpg', img2:'assets/img/project-details-img-1.jpg', img3:'assets/img/project-details-img-1.jpg'}

@@ -6,10 +6,14 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class TeamListService {
+export class DonationService {
 
    constructor(private _http:HttpClient, private _common:CommonService) { }
-    TeamLs():Observable<any>{
+    donateLs():Observable<any>{
+      let url = this._common.setBaseUrl()+ "/main";
+      return this._http.get(url);
+    }
+    donateDetails():Observable<any>{
       let url = this._common.setBaseUrl()+ "/main";
       return this._http.get(url);
     }

@@ -113,69 +113,69 @@
                 <!-- left/blog details -->
                 <div class="col-lg-8 col-md-7">
                     <div class="ul-blog-details ul-blog-inner mb-0">
-                        <div class="ul-blog-2 ul-blog-inner">
-                            <div class="ul-blog-img"><img src="assets/img/blog-b-1.jpg" alt="Blog Image"></div>
+                        <div class="ul-blog-2 ul-blog-inner" *ngFor="let blog of blogDetails">
+                            <div class="ul-blog-img"><img [src]="blog.img" alt="Blog Image"></div>
                             <div class="ul-blog-txt">
                                 <div class="ul-blog-infos">
                                     <!-- single info -->
                                     <div class="ul-blog-info">
                                         <span class="icon"><i class="flaticon-account"></i></span>
-                                        <span class="text">By Admin</span>
+                                        <span class="text">By {{blog.rights}}</span>
                                     </div>
                                     <!-- single info -->
                                     <div class="ul-blog-info">
                                         <span class="icon"><i class="flaticon-price-tag"></i></span>
-                                        <span class="text">Donation</span>
+                                        <span class="text">{{blog.type}}</span>
                                     </div>
                                 </div>
-                                <h2 class="ul-blog-title">Outstanding entrepreneurs and develop your skills.</h2>
+                                <h2 class="ul-blog-title">{{blog.head1}}</h2>
                                 <div class="ul-donation-details-summary-txt ul-blog-details-txt">
-                                    <p>When to Use Lorem Ipsum generally, lorem ipsum is best suited to keeping template fo looking bare or minimizing the distractions of the draft copy. Second, use lorem ipsum if you think placeholder text will distracting. in voluptate velit esse. Cursus libero viverra.</p>
-                                    <p>One of the most remarkable applications of AI in healthcare is in diagnostics. Machine and learning algorithms are capable of analyzing vast amounts of medical data with speed to unprecedente speed and accuracy. This has led to earlier and more precise disease speed detection, greatly enhancing the chances of successful treatment.</p>
-                                    <blockquote>Mosico has been an invaluable partner to us. Any talent we've worked with ha shown a deep understanding of digital experiences. They're seamlessl integrate with or team and meet the level of craft that we hold ourselves accountable with our team and meet to. They're seamlessl integrate with our team and meet</blockquote>
-                                    <p>One of the most remarkable applications of AI in healthcare is in diagnostics. Machine and learning algorithms are capable of analyzing vast amounts of medical data with speed to unprecedente speed and accuracy. This has led to earlier and more precise disease speed detection, greatly enhancing the chances of successful treatment.</p>
+                                    <p>{{blog.pera1}}</p>
+                                    <p>{{blog.pera2}}</p>
+                                    <blockquote>{{blog.blockquate}}</blockquote>
+                                    <p>{{blog.pera3}}</p>
                                     <div class="ul-donation-details-summary-imgs">
-                                        <img src="assets/img/donation-details-inner-1.jpg" alt="image">
-                                        <img src="assets/img/donation-details-inner-2.jpg" alt="image">
+                                        <img [src]="blog.blogImg1" alt="image">
+                                        <img [src]="blog.blogImg2" alt="image">
                                     </div>
-                                    <p>One of the most remarkable applications of AI in healthcare is in diagnostics. Machine and learning algorithms are capable of analyzing vast amounts of medical data with speed to unprecedente speed and accuracy. This has led to earlier and more precise disease speed detection, greatly enhancing the chances of successful treatment.</p>
+                                    <p>{{blog.pera4}}</p>
                                 </div>
                             </div>
                         </div>
 
                         <!-- actions -->
-                        <div class="ul-blog-details-actions">
-                            <!-- tags -->
-                            <div class="tags-wrapper">
-                                <h4 class="actions-title">Tags: </h4>
-                                <div class="ul-blog-sidebar-tags tags">
-                                    <a href="#">Reseller</a>
-                                    <a href="#">Hosting</a>
-                                    <a href="#">WP Hosting</a>
-                                </div>
-                            </div>
 
-                            <!-- share -->
-                            <div class="shares-wrapper">
-                                <h4 class="actions-title">Share: </h4>
-                                <div class="share-options">
-                                    <a href="#"><i class="flaticon-facebook"></i></a>
-                                    <a href="#"><i class="flaticon-twitter"></i></a>
-                                    <a href="#"><i class="flaticon-linkedin-big-logo"></i></a>
-                                    <a href="#"><i class="flaticon-instagram"></i></a>
+                        <ng-container *ngFor="let blog of blogDetails">
+                            <div class="ul-blog-details-actions" *ngFor="let oth of blog.socialMedia">
+                                <!-- tags -->
+                                <div class="tags-wrapper">
+                                    <h4 class="actions-title">Tags: </h4>
+                                    <div class="ul-blog-sidebar-tags tags">
+                                        <a href="#">Donation</a>
+                                        <a href="#">Help</a>
+                                        <a href="#">Team</a>
+                                    </div>
+                                </div>
+                                <!-- share -->
+                                <div class="shares-wrapper">
+                                    <h4 class="actions-title">Share: </h4>
+                                    <div class="share-options">
+                                        <a [href]="oth.fbLink"><i class="flaticon-facebook"></i></a>
+                                        <a [href]="oth.twLink"><i class="flaticon-twitter"></i></a>
+                                        <a [href]="oth.linkLink"><i class="flaticon-linkedin-big-logo"></i></a>
+                                        <a [href]="oth.InstLink"><i class="flaticon-instagram"></i></a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        </ng-container>
 
                         <div class="ul-blog-details-bottom">
                             <!-- reviews -->
-                            <div class="ul-blog-details-reviews">
+                            <!-- <div class="ul-blog-details-reviews">
                                 <h3 class="ul-blog-details-inner-title ul-donation-details-summary-title">02 Comments</h3>
 
-                                <!-- single review -->
                                 <div class="ul-blog-details-review">
                                     <div class="main-comment">
-                                        <!-- reviewer image -->
                                         <div class="ul-blog-details-review-reviewer-img">
                                             <img src="assets/img/commenter-1.jpg" alt="Reviewer Image">
                                         </div>
@@ -191,10 +191,8 @@
                                     </div>
 
                                     <div class="ul-blog-details-review-replies">
-                                        <!-- single reply -->
                                         <div class="ul-blog-details-review-reply">
                                             <div class="main-comment">
-                                                <!-- reviewer image -->
                                                 <div class="ul-blog-details-review-reviewer-img">
                                                     <img src="assets/img/commenter-2.jpg" alt="Reviewer Image">
                                                 </div>
@@ -211,7 +209,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
 
                             <!-- review form -->
                             <div class="ul-blog-details-review-form-wrapper">

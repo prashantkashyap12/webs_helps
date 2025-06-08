@@ -1,23 +1,47 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { EventListService } from '../../service/event/events.service';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-event-details',
   standalone: true,
   imports: [CommonModule],
+  providers:[EventListService],
   templateUrl: './event-details.component.html',
   styleUrl: './event-details.component.css'
 })
 export class EventDetailsComponent implements OnInit {
 
-  ngOnInit(): void {
-    
-  }
+ constructor(private _event:EventListService){}
+   ngOnInit(): void {
+     this._event.eventDetails().subscribe(res=>{
+       console.log(res);
+     })
+   }
 
 
   eventDetails:any[] = [
-    {img:'assets/img/event-details.jpg', dadicat:'Admin', head1:'Manager Disapproved of the Most Recent Work.', pera11:'I must explain to you how all this mistaken idea of pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful.', pera12:'Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise.',
-      head2:'Our Event Mission', pera22:'Cast obscure badger jeep quail congenialy when changed as cat jeepers affectionate thus facilisi goodness this far like ipsum dolor sit amet, consectetur adipisicing elits eiusmod tempo incididunt et laboret dolore magna aliqua enim ad minim. Eveniet in vulputate esse molestie consequat, illum Eveniet in vulputate esse molestie dolore .', li1:'Creating and editing content', li2:'Workflows, reporting, and content organization', li3:'User & role-based administration and security', li4:'Flexibility, scalability, and performance and analysis', li5:'Multilingual content capabilities',
+    {img:'assets/img/event-details.jpg', dadicat:'Admin', 
+      head1:'Nurturing Health, Empowering Lives — Together for Health: A Successful Medical Mission by Helping Hand Sanstha',
+      pera11:'Helping Hand Sanstha organized a Free Health Camp on 4th May 2025 at Bodla Chauraha, Agra, to provide essential health services to the underprivileged.', 
+      pera12:'This initiative was aimed at spreading awareness about preventive healthcare and ensuring medical access for all.',
+      head2:'Our mission is to empower communities by providing accessible healthcare services.',
+      pera22:'Through this health camp, we aim to build a healthier society by connecting people with dedicated doctors, essential checkups, and a reliable health support system like our Help Health Card.', 
+      li1:'More than 400 patients received free checkups', 
+      li2:'Services included Blood Pressure, Diabetes, and General Health Checkups', 
+      li3:'Health education sessions on nutrition, hygiene, and preventive care', 
+      li4:'Spreading awareness about preventive health.', 
+      li5:'Promoting well-being for all—especially the underserved and vulnerable.',
+      otherHead:'Participating Doctors',
+      parti1:'Dr. Renu Sharma',
+      parti12:'Dr. Arti Kanaujia',
+      parti13:'Dr. Shivang Sharma (Diabetologist)',
+      parti14:'Dr. Ravi Sharma',
+      parti15:'Dr. D. K. Dixit',
+      parti16:'Dr. R. N. Singh',
+      parti17:'Several local doctors and healthcare volunteers'
+
     }
   ]
 
