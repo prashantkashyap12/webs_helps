@@ -109,54 +109,53 @@
 
             <!-- donation details content -->
             <div class="col-lg-8">
-                <div class="ul-donation-details">
-                    <div class="ul-donation-details-img"><img src="assets/img/donation-details-img.jpg" alt="Image"></div>
-                    <h2 class="ul-donation-details-raised">$69,000 <span class="target">of $100,000 raised</span></h2>
+                <div class="ul-donation-details" *ngFor="let dot of donate">
+                    <div class="ul-donation-details-img"><img [src]="dot.img" alt="Image"></div>
+                    <h2 class="ul-donation-details-raised">{{dot.colAmt}} <span class="target">of {{dot.raised}} raised</span></h2>
                     <div class="ul-donation-progress ul-donation-progress-2">
                         <div class="donation-progress-container ul-progress-container">
-                            <div class="donation-progressbar ul-progressbar" data-ul-progress-value="95">
+                            <div class="donation-progressbar ul-progressbar" [attr.data-ul-progress-value]="dot.progres">
                                 <div class="donation-progress-label ul-progress-label"></div>
                             </div>
                         </div>
                     </div>
-
                     <div class="ul-donation-details-notice">
                         <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M14.0003 20.6667C14.3781 20.6667 14.695 20.5387 14.951 20.2827C15.207 20.0267 15.3345 19.7103 15.3337 19.3334C15.3328 18.9565 15.2048 18.6401 14.9497 18.3841C14.6945 18.1281 14.3781 18.0001 14.0003 18.0001C13.6225 18.0001 13.3061 18.1281 13.051 18.3841C12.7959 18.6401 12.6679 18.9565 12.667 19.3334C12.6661 19.7103 12.7941 20.0272 13.051 20.2841C13.3079 20.541 13.6243 20.6685 14.0003 20.6667ZM14.0003 15.3334C14.3781 15.3334 14.695 15.2054 14.951 14.9494C15.207 14.6934 15.3345 14.377 15.3337 14.0001V8.66675C15.3337 8.28897 15.2057 7.97253 14.9497 7.71741C14.6937 7.4623 14.3772 7.3343 14.0003 7.33341C13.6234 7.33253 13.307 7.46053 13.051 7.71741C12.795 7.9743 12.667 8.29075 12.667 8.66675V14.0001C12.667 14.3779 12.795 14.6947 13.051 14.9507C13.307 15.2067 13.6234 15.3343 14.0003 15.3334ZM14.0003 27.3334C12.1559 27.3334 10.4226 26.9832 8.80033 26.2827C7.17811 25.5823 5.76699 24.6325 4.56699 23.4334C3.36699 22.2343 2.41722 20.8232 1.71766 19.2001C1.01811 17.577 0.667883 15.8436 0.666994 14.0001C0.666105 12.1565 1.01633 10.4232 1.71766 8.80008C2.41899 7.17697 3.36877 5.76586 4.56699 4.56675C5.76522 3.36764 7.17633 2.41786 8.80033 1.71741C10.4243 1.01697 12.1577 0.666748 14.0003 0.666748C15.843 0.666748 17.5763 1.01697 19.2003 1.71741C20.8243 2.41786 22.2354 3.36764 23.4337 4.56675C24.6319 5.76586 25.5821 7.17697 26.2843 8.80008C26.9865 10.4232 27.3363 12.1565 27.3337 14.0001C27.331 15.8436 26.9808 17.577 26.283 19.2001C25.5852 20.8232 24.6354 22.2343 23.4337 23.4334C22.2319 24.6325 20.8208 25.5827 19.2003 26.2841C17.5799 26.9854 15.8465 27.3352 14.0003 27.3334Z" fill="var(--ul-primary)" />
                         </svg>
                         <p>
-                            <strong>Notice</strong>: Test mode is enabled. While in test mode no live donations are processed.
+                            <strong>Notice</strong>: {{dot.notes}}
                         </p>
                     </div>
 
                     <form action="#" class="ul-donation-details-form">
                         <!-- selct amount -->
                         <div class="ul-donation-details-donate-form-wrapper">
-                            <div class="selected-amount"><span class="currency">$</span> <span class="number">10.00</span></div>
+                            <div class="selected-amount"><span class="currency"></span> <span class="number">{{dot.fix_amt1}}</span></div>
                             <div class="ul-donate-form">
                                 <div>
                                     <input type="radio" name="donate-amount" id="donate-amount-1" checked hidden>
-                                    <label for="donate-amount-1" class="ul-donate-form-label">$10</label>
+                                    <label for="donate-amount-1" class="ul-donate-form-label">{{dot.fix_amt1}}</label>
                                 </div>
 
                                 <div>
                                     <input type="radio" name="donate-amount" id="donate-amount-2" hidden>
-                                    <label for="donate-amount-2" class="ul-donate-form-label">$20</label>
+                                    <label for="donate-amount-2" class="ul-donate-form-label">{{dot.fix_amt2}}</label>
                                 </div>
 
                                 <div>
                                     <input type="radio" name="donate-amount" id="donate-amount-3" hidden>
-                                    <label for="donate-amount-3" class="ul-donate-form-label">$30</label>
+                                    <label for="donate-amount-3" class="ul-donate-form-label">{{dot.fix_amt3}}</label>
                                 </div>
 
                                 <div>
                                     <input type="radio" name="donate-amount" id="donate-amount-4" hidden>
-                                    <label for="donate-amount-4" class="ul-donate-form-label">$40</label>
+                                    <label for="donate-amount-4" class="ul-donate-form-label">{{dot.fix_amt4}}</label>
                                 </div>
 
                                 <div>
                                     <input type="radio" name="donate-amount" id="donate-amount-5" hidden>
-                                    <label for="donate-amount-5" class="ul-donate-form-label">$50</label>
+                                    <label for="donate-amount-5" class="ul-donate-form-label">{{dot.fix_amt5}}</label>
                                 </div>
 
                                 <div class="custom-amount-wrapper">
@@ -224,7 +223,7 @@
                             </div>
                             <div class="ul-donation-details-form-bottom">
                                 <button type="submit" class="ul-btn"><i class="flaticon-fast-forward-double-right-arrows-symbol"></i> Donate Now</button>
-                                <span class="donation-total">Donation Total: <span class="number">$10</span></span>
+                                <span class="donation-total">Donation Total: <span class="number" id="custom-amount">10</span></span>
                             </div>
                         </div>
                     </form>
@@ -232,24 +231,24 @@
                     <div class="ul-donation-details-summary">
                         <h3 class="ul-donation-details-summary-title">Summary</h3>
                         <div class="ul-donation-details-summary-txt">
-                            <p>Future, as it seeks to lead the industry in technological innovation and sustainable building practices to deliver long-lasting value for its clients. Netus lorem rutrum arcu dignissim at sit morbi nascetur eget potenti vestibulum is cras. Tempor nonummy metus lobortis. Sociis velit etiam, dapibus.Lepellentesque a cras posuere tempor facilisi habitant lectus cras posuere tempor facilisi habitant rutrum pede.</p>
+                            <p>{{dot.sumryPera}}</p>
                             <ul>
-                                <li>Empower Through Charity</li>
-                                <li>Giving Hope, Changing Lives</li>
-                                <li>Healing Communities</li>
-                                <li>Together We Can</li>
-                                <li>Compassion in Action</li>
-                                <li>Compassion in Action</li>
-                                <li>Multilingual content capabilities</li>
-                                <li>Every Act Counts</li>
+                                <li>{{dot.sumryLi1}}</li>
+                                <li>{{dot.sumryLi2}}</li>
+                                <li>{{dot.sumryLi3}}</li>
+                                <li>{{dot.sumryLi4}}</li>
+                                <li>{{dot.sumryLi5}}</li>
+                                <li>{{dot.sumryLi6}}</li>
+                                <li>{{dot.sumryLi7}}</li>
+                                <li>{{dot.sumryLi8}}</li>
                             </ul>
                             <div class="ul-donation-details-summary-imgs">
-                                <img src="assets/img/donation-details-inner-1.jpg" alt="image">
-                                <img src="assets/img/donation-details-inner-2.jpg" alt="image">
+                                <img [src]="dot.smr_img1" alt="image">
+                                <img [src]="dot.smr_img2" alt="image">
                             </div>
-                            <p>Future, as it seeks to lead the industry in technological innovation and sustainable building practices to deliver long-lasting value for its clients. Netus lorem rutrum arcu dignissim at sit morbi nascetur eget potenti vestibulum is cras. Tempor nonummy metus lobortis. Sociis velit etiam, dapibus.Lepellentesque a cras posuere tempor facilisi habitant lectus cras posuere tempor facilisi habitant rutrum pede .</p>
-                            <blockquote>Mosico has been an invaluable partner to us. Any talent we've worked with ha shown a deep understanding of digital experiences. They're seamlessl integrate with or team and meet the level of craft that we hold ourselves accountable with our team and meet to. They're seamlessl integrate with our team and meet</blockquote>
-                            <p>Future, as it seeks to lead the industry in technological innovation and sustainable building practices to deliver long-lasting value for its clients. Netus lorem rutrum arcu dignissim at sit morbi nascetur eget potenti vestibulum is cras. Tempor nonummy metus lobortis. Sociis velit etiam, dapibus.Lepellentesque a cras posuere tempor facilisi habitant lectus cras posuere tempor facilisi habitant rutrum pede .</p>
+                            <p>{{dot.smr_pra1}}</p>
+                            <blockquote>{{dot.smr_blockqt}}</blockquote>
+                            <p>{{dot.smr_pra2}}</p>
                         </div>
                     </div>
                 </div>

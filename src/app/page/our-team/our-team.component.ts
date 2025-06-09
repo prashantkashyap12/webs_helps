@@ -1,15 +1,27 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { TeamListService } from '../../service/team/team.service';
 
 @Component({
   selector: 'app-our-team',
   standalone: true,
   imports: [CommonModule],
+  providers:[TeamListService],
   templateUrl: './our-team.component.html',
   styleUrl: './our-team.component.css'
 })
-export class OurTeamComponent {
+export class OurTeamComponent implements OnInit{
 
+  constructor(private _teamSer:TeamListService){}
+  ngOnInit(): void {
+    this.getRes()
+  }
+
+  getRes(){
+    this._teamSer.TeamLs().subscribe(res=>{
+      console.log(res);
+    })
+  }
 
   teamMembers:any[] = [
     { imgPath: 'assets/img/member-1.jpg', name: 'John Doe', position: 'Founder & CEO' },

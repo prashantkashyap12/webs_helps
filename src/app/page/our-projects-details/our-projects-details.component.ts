@@ -7,7 +7,7 @@ import { ProjectListService } from '../../service/project/project.service';
 @Component({
   selector: 'app-our-projects-details',
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule],
   providers:[ProjectListService],
   templateUrl: './our-projects-details.component.html',
   styleUrl: './our-projects-details.component.css'
