@@ -28,8 +28,8 @@ export class BlogDetailsComponent {
     {
       img:'assets/img/blog-b-1.jpg',
       rigths:'Admin',
-      Donation:'Donation',
-      head:'Outstanding entrepreneurs and develop your skills.',
+      type:'Donation',
+      head1:'Outstanding entrepreneurs and develop your skills.',
       pera1:'When to Use Lorem Ipsum generally, lorem ipsum is best suited to keeping template fo looking bare or minimizing the distractions of the draft copy. Second, use lorem ipsum if you think placeholder text will distracting. in voluptate velit esse. Cursus libero viverra.',
       pera2:'One of the most remarkable applications of AI in healthcare is in diagnostics. Machine and learning algorithms are capable of analyzing vast amounts of medical data with speed to unprecedente speed and accuracy. This has led to earlier and more precise disease speed detection, greatly enhancing the chances of successful treatment.',
       blockquate:"Mosico has been an invaluable partner to us. Any talent we've worked with ha shown a deep understanding of digital experiences. They're seamlessl integrate with or team and meet the level of craft that we hold ourselves accountable with our team and meet to. They're seamlessl integrate with our team and meet",
@@ -40,9 +40,7 @@ export class BlogDetailsComponent {
       fbLink:'#', 
       twLink:'#', 
       linkLink:'#', 
-      InstLink:'#',
+      instLink:'#',
     }
-
   ]
-
 }
