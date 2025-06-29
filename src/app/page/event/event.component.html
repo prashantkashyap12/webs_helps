@@ -21,9 +21,9 @@
                 <div class="row ul-bs-row row-cols-lg-2 row-cols-1">
                     <div class="col wow animate__fadeInUp" *ngFor="let event of events">
                         <div class="ul-event ul-event--inner">
-                            <div class="ul-event-img">
+                            <div class="ul-event-img" >
                                 <img [src]="event.imgPath" alt="Event Image">
-                                <span class="date">{{event.date | date:'dd'}} <span>{{event.date | date:'MMM'}}</span></span>
+                                <span class="date" style="background-color: rgba(240, 248, 255, 0.379);">{{event.date | date:'dd'}} <span>{{event.date | date:'MMM'}}</span></span>
                             </div>
                             <div class="ul-event-txt">
                                 <h3 class="ul-event-title"><a [routerLink]="[event.link, event.id]">{{event.heading}}</a></h3>
