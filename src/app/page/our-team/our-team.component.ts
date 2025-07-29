@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { TeamListService } from '../../service/team/team.service';
+import { baseurl } from '../../interface/baseurl';
 
 @Component({
   selector: 'app-our-team',
@@ -12,6 +13,7 @@ import { TeamListService } from '../../service/team/team.service';
 })
 export class OurTeamComponent implements OnInit{
 
+  private url = new baseurl().baseUrl;
   constructor(private _teamSer:TeamListService){}
   ngOnInit(): void {
     this.getRes()
@@ -19,7 +21,12 @@ export class OurTeamComponent implements OnInit{
 
   getRes(){
     this._teamSer.TeamLs().subscribe(res=>{
-      console.log(res);
+      console.log(res.res);
+      this.teamMembers = res.res.map((data:any)=>({
+        imgPath:this.url+data.ImgPath,
+        name:data.Name,
+        position:data.Position
+      }));
     })
   }
 
