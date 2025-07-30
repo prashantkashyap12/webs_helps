@@ -17,7 +17,7 @@ import moment, { Moment } from 'moment';
 export class BlogComponent implements OnInit {
 
   constructor(private _blog:BlogListService){}
-  ngOnInit(): void {
+  ngOnInit(): void { 
     this.getRes();
   }
   private url = new baseurl().baseUrl;
@@ -35,7 +35,6 @@ export class BlogComponent implements OnInit {
       }))
     })
   }
-
 
   blogList:blog_ls [] = [
   ];
