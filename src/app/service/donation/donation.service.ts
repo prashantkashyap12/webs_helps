@@ -10,11 +10,11 @@ export class DonationService {
 
    constructor(private _http:HttpClient, private _common:CommonService) { }
     donateLs():Observable<any>{
-      let url = this._common.setBaseUrl()+ "/main";
+      let url = this._common.setBaseUrl() + "getDontLst";
       return this._http.get(url);
     }
-    donateDetails():Observable<any>{
-      let url = this._common.setBaseUrl()+ "/main";
+    donateDetails(dontId:any):Observable<any>{
+      let url = this._common.setBaseUrl()+ `getDonateDetails?doantTran=${dontId}`;
       return this._http.get(url);
     }
 }

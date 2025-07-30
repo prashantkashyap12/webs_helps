@@ -10,11 +10,11 @@ export class EventListService {
 
    constructor(private _http:HttpClient, private _common:CommonService) { }
     eventLs():Observable<any>{
-      let url = this._common.setBaseUrl()+ "/main";
+      let url = this._common.setBaseUrl()+ "ViewEventLs";
       return this._http.get(url);
     }
-    eventDetails():Observable<any>{
-      let url = this._common.setBaseUrl()+ "/main";
-      return this._http.get(url);event
+    eventDetails(eventId:any):Observable<any>{
+      let url = this._common.setBaseUrl()+ `getEventDetilsId?eventTrn=${eventId}`;
+      return this._http.get(url);
     }
 }

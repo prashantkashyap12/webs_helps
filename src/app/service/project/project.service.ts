@@ -10,12 +10,12 @@ export class ProjectListService {
 
    constructor(private _http:HttpClient, private _common:CommonService) { }
      projectLs():Observable<any>{
-      let url = this._common.setBaseUrl()+ "/main";
+      let url = this._common.setBaseUrl()+ "getProjLs";
       let res = this._http.get(url);
       return res;
     }
-    projectDetails():Observable<any>{
-      let url = this._common.setBaseUrl()+ "/main";
+    projectDetails(prjId:any):Observable<any>{
+      let url = this._common.setBaseUrl()+ `GetDetailsProjId?ProjTran=${prjId}`;
       let res = this._http.get(url);
       return res;
     }

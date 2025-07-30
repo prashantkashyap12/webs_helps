@@ -29,10 +29,22 @@ export class BlogDetailsComponent {
     console.log(blogTran);
 
     this._blog.blogDetails(blogTran).subscribe(res=>{
-      console.log(res.result);
       this.blogDetails = res.result.map((data:any)=>({
         img:this.url+data.img,
-        rigths:data.rights
+        type:data.type,
+        rigths:data.Rights,
+        head1:data.Head,
+        pera1:data.Pera1,
+        pera2:data.Pera2,
+        blockquate:data.Blockquate,
+        pera3:data.Pera3,
+        blogImg1:this.url+data.BlogImg1,
+        blogImg2:this.url+data.BlogImg2,
+        pera4:data.Pera3,
+        fbLink:data.FbLink,
+        twLink: data.TwLink,
+        linkLink: data.LinkLink,
+        instLink: data.InstLink
       }))
     })
   }
