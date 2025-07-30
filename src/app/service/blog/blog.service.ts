@@ -10,11 +10,11 @@ export class BlogListService {
 
   constructor(private _http:HttpClient, private _common:CommonService) { }
   blogLs():Observable<any>{
-    let url = this._common.setBaseUrl()+ "/main";
+    let url = this._common.setBaseUrl()+ "blogList";
     return this._http.get(url);
   }
-  blogDetails():Observable<any>{
-    let url = this._common.setBaseUrl()+ "/main";
+  blogDetails(blogTran:any):Observable<any>{
+    let url = this._common.setBaseUrl()+ `blogDetRec?blogTran=${blogTran}`;
     return this._http.get(url);
   }
   

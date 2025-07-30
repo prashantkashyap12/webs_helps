@@ -9,8 +9,6 @@ import { Observable, Subject } from 'rxjs';
 export class TeamListService {
 
   //  testSub = new Subject<any>();
-
-
    constructor(private _http:HttpClient, private _common:CommonService) { }
     TeamLs():Observable<any>{
       let url = this._common.setBaseUrl()+ "GetTeamList";
